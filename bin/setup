@@ -1,0 +1,19 @@
+#!/bin/bash -e
+
+set -u
+
+version=pg932
+
+source $OPENSHIFT_CARTRIDGE_SDK_BASH
+
+for dir in logs pid tmp env; do
+	mkdir -p $dir
+done
+
+mkdir -p $OPENSHIFT_DATA_DIR/.$version/data
+
+echo $(pwd)/versions/$version/bin > env/OPENSHIFT_PG_PATH_ELEMENT
+echo $(pwd)/versions/$version/lib > env/LD_LIBRARY_PATH
+echo $OPENSHIFT_PG_HOST > env/STATHOST
+
+client_result "$version setup completed"

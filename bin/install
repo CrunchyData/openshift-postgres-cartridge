@@ -1,0 +1,18 @@
+#!/bin/bash -e
+
+version=pg932
+
+source $OPENSHIFT_CARTRIDGE_SDK_BASH
+
+#mkdir -p $OPENSHIFT_DATA_DIR/.rls/data
+
+echo "running initdb....`date`"
+
+$OPENSHIFT_PG_PATH_ELEMENT/initdb -D $OPENSHIFT_DATA_DIR/.$version/data
+
+client_result "completed running initdb ....`date`"
+
+client_result "configuring standalone postgres server this time"
+erb  ~/$version/conf/pg_hba.conf.erb > $OPENSHIFT_DATA_DIR/.$version/data/pg_hba.conf
+erb  ~/$version/conf/postgresql.conf.erb > $OPENSHIFT_DATA_DIR/.$version/data/postgresql.conf
+

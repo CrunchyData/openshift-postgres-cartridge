@@ -1,0 +1,22 @@
+Name: pg932
+Cartridge-Short-Name: PG
+Display-Name: pg932
+Version: "0.1"
+Website: https://github.com/jmccormick2001/openshift-postgres-9.3.2-cart
+Cartridge-Version: 0.1.0
+Cartridge-Vendor: crunchydatasolutions
+Categories:
+  - service
+  - database
+  - embedded
+Provides:
+  - pg932-0.1
+  - pg932
+Scaling:
+  Min: 1
+  Max: -1
+Endpoints:
+  - Private-IP-Name:   HOST
+    Private-Port-Name: PORT
+    Private-Port:      5432
+    Public-Port-Name:  PORT
