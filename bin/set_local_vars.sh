@@ -1,4 +1,3 @@
-rhc app show myapp --gears  > /tmp/foo
 declare -a hosts=();
 while read line;
 do 
@@ -10,7 +9,7 @@ do
 			hosts=("${hosts[@]}" $hoststring);
 			;;
 	esac
-done < /tmp/foo
+done < /tmp/rhcoutput
 
 #echo "hosts array length=" ${#hosts[@]}
 #echo "hosts array contents=" ${hosts[@]}
