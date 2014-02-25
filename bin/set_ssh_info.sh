@@ -31,3 +31,5 @@ echo $PG_REMOTE_SSH_STRING > ~/pg932/env/PG_REMOTE_SSH_STRING
 echo $PG_REMOTE_USER > ~/pg932/env/PG_REMOTE_USER
 echo $PG_REMOTE_HOST > ~/pg932/env/PG_REMOTE_HOST
 echo $PG_NODE_TYPE > ~/pg932/env/PG_NODE_TYPE
+
+source ~/pg932/bin/create-tunnel.sh
