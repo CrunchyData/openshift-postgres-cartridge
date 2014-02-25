@@ -21,4 +21,4 @@ Endpoints:
     Private-Port:      5432
     Public-Port-Name:  PORT
 
-Source-Url: git@github.com:crunchyds/openshift-postgres-932-rh65-cart.git
+Source-Url: https://github.com/crunchyds/openshift-postgres-932-rh65-cart.git
