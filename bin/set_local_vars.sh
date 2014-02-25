@@ -14,17 +14,17 @@ done < /tmp/rhcoutput
 #echo "hosts array length=" ${#hosts[@]}
 #echo "hosts array contents=" ${hosts[@]}
 
-export pgmaster=${hosts[0]}
-export pgstandby=${hosts[1]}
+export MASTER=${hosts[0]}
+export STANDBY=${hosts[1]}
 
-echo "master is..." $pgmaster
-echo "standby is..." $pgstandby
+echo "MASTER is..." $MASTER
+echo "STANDBY is..." $STANDBY
 
-export pgmasteruser=`echo $pgmaster | tr '@' '\n' | head -1`
-export pgmasterhost=`echo $pgmaster | tr '@' '\n' | tail -1`
-export pgstandbyuser=`echo $pgstandby | tr '@' '\n' | head -1`
-export pgstandbyhost=`echo $pgstandby | tr '@' '\n' | tail -1`
-echo "master user is..." $pgmasteruser
-echo "master host is..." $pgmasterhost
-echo "standby user is..." $pgstandbyuser
-echo "standby host is..." $pgstandbyhost
+export MASTER_USER=`echo $MASTER | tr '@' '\n' | head -1`
+export MASTER_HOST=`echo $MASTER | tr '@' '\n' | tail -1`
+export STANDBY_USER=`echo $STANDBY | tr '@' '\n' | head -1`
+export STANDBY_HOST=`echo $STANDBY | tr '@' '\n' | tail -1`
+echo "MASTER_USER is..." $MASTER_USER
+echo "MASTER_HOST is..." $MASTER_HOST
+echo "STANDBY_USER is..." $STANDBY_USER
+echo "STANDBY_HOST is..." $STANDBY_HOST
