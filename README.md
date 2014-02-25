@@ -1,2 +1,2 @@
-openshift-postgres-9.3.2-cart
+openshift-postgres-932-cart-rh65 
 =============================
