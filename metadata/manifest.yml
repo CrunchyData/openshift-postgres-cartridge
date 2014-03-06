@@ -3,7 +3,7 @@ Cartridge-Short-Name: PG
 Display-Name: postgresql-9.3.2-crunchy
 Description: postgresql-9.3.2-crunchy is provided by Crunchy Data Solutions (www.crunchydatasolutions.com) and includes the postgreSQL 9.3.2 release.  This release has been patched to allow the statistics collector and autovacuum processes to work in the OpenShift security model.  Other features include the ability to create a master-standby replication postgreSQL deployment within the OpenShift network.
 Version: "0.1"
-Website: https://github.com/jmccormick2001/openshift-postgres-9.3.2-cart
+Website: http://www.crunchydatasolutions.com
 Cartridge-Version: 0.1.0
 Cartridge-Vendor: crunchydatasolutions
 Categories:
