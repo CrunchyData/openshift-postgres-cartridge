@@ -32,4 +32,9 @@ echo $PG_REMOTE_USER > ~/pg932/env/PG_REMOTE_USER
 echo $PG_REMOTE_HOST > ~/pg932/env/PG_REMOTE_HOST
 echo $PG_NODE_TYPE > ~/pg932/env/PG_NODE_TYPE
 
+# give the environment variables some time to take effect before
+# creating the tunnels
+
+sleep 4
+
 source ~/pg932/bin/create-tunnel.sh
