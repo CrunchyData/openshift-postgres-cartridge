@@ -27,6 +27,8 @@ ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=~/pg932/known_hosts \
 $PG_REMOTE_USER@$PG_REMOTE_HOST \
  'echo $OPENSHIFT_PG_HOST' > ~/pg932/env/PG_REMOTE_INTERNAL_IP
 
+PG_REMOTE_INTERNAL_IP=`cat ~/pg932/env/PG_REMOTE_INTERNAL_IP`
+echo "setting PG_REMOTE_INTERANAL_IP is " $PG_REMOTE_INTERNAL_IP
 echo $PG_REMOTE_SSH_STRING > ~/pg932/env/PG_REMOTE_SSH_STRING
 echo $PG_REMOTE_USER > ~/pg932/env/PG_REMOTE_USER
 echo $PG_REMOTE_HOST > ~/pg932/env/PG_REMOTE_HOST

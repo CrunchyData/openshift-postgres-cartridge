@@ -1,5 +1,7 @@
 #!/bin/bash -x
 
+echo "in create-tunnel with PG_REMOTE_INTERNAL_IP of " $PG_REMOTE_INTERNAL_IP
+
 nohup ssh -o UserKnownHostsFile=~/pg932/known_hosts \
 -i ~/pg932/pg932_rsa_key \
 -N -L \
