@@ -12,6 +12,7 @@ Requires:      rubygem(openshift-origin-node)
 Requires:      openshift-origin-node-util
 Requires:      lsof
 Requires:      bc
+Requires:      /bin/sh
 BuildArch:     noarch
 
 %description
