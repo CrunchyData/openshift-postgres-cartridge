@@ -38,7 +38,6 @@ Provides postgres 932 support to OpenShift. (Cartridge Format V2)
 %attr(0755,-,-) %{cartridgedir}/hooks/
 %{cartridgedir}
 %doc %{cartridgedir}/README.md
-%doc %{cartridgedir}/COPYRIGHT
 %doc %{cartridgedir}/LICENSE
 
 %changelog
