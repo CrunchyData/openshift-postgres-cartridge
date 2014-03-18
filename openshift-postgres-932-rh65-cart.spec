@@ -2,7 +2,7 @@
 
 Summary:       Provides Crunchy Postgres 932 support
 Name:          openshift-postgres-932-rh65-cart
-Version:       0.0.2
+Version:       0.0.3
 Release:       1%{?dist}
 Group:         Development/Languages
 License:       ASL 2.0
@@ -42,6 +42,9 @@ Provides postgres 932 support to OpenShift. (Cartridge Format V2)
 %doc %{cartridgedir}/LICENSE
 
 %changelog
+* Tue Mar 18 2014 Unknown name 0.0.3-1
+- fix spec (jeffmc@localhost.localdomain)
+
 * Tue Mar 18 2014 Unknown name 0.0.2-1
 - new package built with tito
 
