@@ -13,7 +13,6 @@ Requires:      openshift-origin-node-util
 Requires:      lsof
 Requires:      bc
 Requires:      /bin/sh
-BuildArch:     noarch
 
 %description
 Provides postgres 932 support to OpenShift. (Cartridge Format V2)
