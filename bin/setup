@@ -21,9 +21,11 @@ client_result "$JEFF_NODE_TYPE is being setup"
 if [ "$JEFF_NODE_TYPE" == "master" ]; then
 	add_domain_env_var "JEFF_MASTER_USER=${USER}"
 	add_domain_env_var "JEFF_MASTER_DNS=${OPENSHIFT_APP_DNS}"
+	add_domain_env_var "JEFF_MASTER_IP=${OPENSHIFT_PG_HOST}"
 elif  [ "$JEFF_NODE_TYPE" == "standby" ]; then
 	add_domain_env_var "JEFF_STANDBY_USER=${USER}"
 	add_domain_env_var "JEFF_STANDBY_DNS=${OPENSHIFT_APP_DNS}"
+	add_domain_env_var "JEFF_STANDBY_IP=${OPENSHIFT_PG_HOST}"
 fi
 
 client_result "$version setup completed"

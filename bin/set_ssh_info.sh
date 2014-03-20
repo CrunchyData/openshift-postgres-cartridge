@@ -39,4 +39,4 @@ echo $PG_NODE_TYPE > ~/pg932/env/PG_NODE_TYPE
 
 sleep 4
 
-source ~/pg932/bin/create-tunnel.sh
+#source ~/pg932/bin/create-tunnel.sh
