@@ -44,7 +44,7 @@ function update() {
 
 function start() {
 # start the tunnels if this is a master or standby configuration of postgres
-	if [ -n "$PG_REMOTE_USER" ]; then
+	if [ -n "$PG_NODE_TYPE" ]; then
 		./create-tunnel.sh	
 	fi
 
@@ -60,7 +60,7 @@ function start() {
 
 
 function stop() {
-	if [ -n "$PG_REMOTE_USER" ]; then
+	if [ -n "$PG_NODE_TYPE" ]; then
 		./stop-tunnel.sh	
 	fi
 	client_result "stopping postgres...."	
