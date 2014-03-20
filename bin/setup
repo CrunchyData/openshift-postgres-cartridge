@@ -18,4 +18,8 @@ echo $OPENSHIFT_PG_HOST > env/STATHOST
 
 client_result "$JEFF_NODE_TYPE is being setup"
 
+add_domain_env_var "JEFF_MASTER_USER=${USER}"
+add_domain_env_var "JEFF_MASTER_DNS=${OPENSHIFT_APP_DNS}"
+
+
 client_result "$version setup completed"
