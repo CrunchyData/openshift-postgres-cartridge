@@ -56,6 +56,11 @@ function start() {
 		nohup pg_ctl -D $OPENSHIFT_DATA_DIR/.$version/data start &> /tmp/pg-startup.out;	
     fi
 
+	if [ "$JEFF_NODE_TYPE" == "master" ]; then
+		client_result "this is a master...we are granting replication to user";
+		$OPENSHIFT_PG_DIR/bin/grant.sh;
+	fi
+
 }
 
 
