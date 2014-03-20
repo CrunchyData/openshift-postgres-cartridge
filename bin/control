@@ -43,7 +43,11 @@ function update() {
 }
 
 function start() {
-	create-tunnel.sh	
+# start the tunnels if this is a master or standby configuration of postgres
+	if [ -n "$PG_REMOTE_USER" ]; then
+		create-tunnel.sh	
+	fi
+
 	client_result "starting postgres...."	
 	ps -C postgres > /dev/null
     if [ "$?" -eq "0" ];
