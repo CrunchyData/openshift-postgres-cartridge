@@ -43,6 +43,7 @@ function update() {
 }
 
 function start() {
+	create-tunnel.sh	
 	client_result "starting postgres...."	
 	ps -C postgres > /dev/null
     if [ "$?" -eq "0" ];
