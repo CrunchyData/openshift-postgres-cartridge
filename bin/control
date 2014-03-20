@@ -44,7 +44,7 @@ function update() {
 
 function start() {
 # start the tunnels if this is a master or standby configuration of postgres
-	if [ -n "$PG_NODE_TYPE" ]; then
+	if [ -n "$JEFF_NODE_TYPE" ]; then
 		$OPENSHIFT_PG_DIR/bin/create-tunnel.sh	
 	fi
 
