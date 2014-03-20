@@ -1,4 +1,4 @@
-#!/bin/bash -x
+#!/bin/bash 
 
 echo "create-tunnel called for " $JEFF_NODE_TYPE
 
