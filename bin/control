@@ -58,7 +58,8 @@ function start() {
 
 	if [ "$JEFF_NODE_TYPE" == "master" ]; then
 		client_result "this is a master...we are granting replication to user";
-#$OPENSHIFT_PG_DIR/bin/grant.sh;
+		sleep 10
+		$OPENSHIFT_PG_DIR/bin/grant.sh;
 	fi
 
 }
