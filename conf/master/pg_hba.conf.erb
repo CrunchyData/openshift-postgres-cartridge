@@ -91,6 +91,6 @@ host    all             all             ::1/128                 trust
 # replication privilege.
 #local   replication     jeffmc                                trust
 #host    replication     jeffmc        0.0.0.0/0            trust
-host    replication     <%= ENV['PG_REMOTE_USER'] %>        <%= ENV['PG_REMOTE_HOST'] %>            trust
+host    replication     <%= ENV['JEFF_STANDBY_USER'] %>        <%= ENV['JEFF_STANDBY_IP'] %>            trust
 host    replication     <%= ENV['USER'] %>        <%= ENV['OPENSHIFT_PG_HOST'] %>/32            trust
 #host    replication     jeffmc        ::1/128                 trust
