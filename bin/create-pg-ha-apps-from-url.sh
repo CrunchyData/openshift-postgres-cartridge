@@ -56,12 +56,12 @@ rhc scp pgstandby upload pg_rsa_key app-root/data
 
 
 echo "pgmaster created..."
-rhc add-cartridge https://raw.githubusercontent.com/crunchyds/openshift-postgres-932-rh65-cart/master/metadata/manifest.yml?token=863211__eyJzY29wZSI6IlJhd0Jsb2I6Y3J1bmNoeWRzL29wZW5zaGlmdC1wb3N0Z3Jlcy05MzItcmg2NS1jYXJ0L21hc3Rlci9tZXRhZGF0YS9tYW5pZmVzdC55bWwiLCJleHBpcmVzIjoxMzk1OTQ0Mjc4fQ%3D%3D--3bda6243649c055f749c5b52ac3be231ae858d65 -a pgmaster --env JEFF_NODE_TYPE=master
+rhc add-cartridge https://raw.githubusercontent.com/crunchyds/openshift-postgres-cartridge/master/metadata/manifest.yml?token=863211__eyJzY29wZSI6IlJhd0Jsb2I6Y3J1bmNoeWRzL29wZW5zaGlmdC1wb3N0Z3Jlcy1jYXJ0cmlkZ2UvbWFzdGVyL21ldGFkYXRhL21hbmlmZXN0LnltbCIsImV4cGlyZXMiOjEzOTYwMTg1MTh9--7853bf8d123b4f54346faeb18568f0d7ea026138 -a pgmaster --env JEFF_NODE_TYPE=master
 echo "added Crunchy postgres cartridge to pgmaster...."
 
 echo "pgstandby created..."
 
-rhc add-cartridge https://raw.githubusercontent.com/crunchyds/openshift-postgres-932-rh65-cart/master/metadata/manifest.yml?token=863211__eyJzY29wZSI6IlJhd0Jsb2I6Y3J1bmNoeWRzL29wZW5zaGlmdC1wb3N0Z3Jlcy05MzItcmg2NS1jYXJ0L21hc3Rlci9tZXRhZGF0YS9tYW5pZmVzdC55bWwiLCJleHBpcmVzIjoxMzk1OTQ0Mjc4fQ%3D%3D--3bda6243649c055f749c5b52ac3be231ae858d65 -a pgstandby --env JEFF_NODE_TYPE=standby
+rhc add-cartridge https://raw.githubusercontent.com/crunchyds/openshift-postgres-cartridge/master/metadata/manifest.yml?token=863211__eyJzY29wZSI6IlJhd0Jsb2I6Y3J1bmNoeWRzL29wZW5zaGlmdC1wb3N0Z3Jlcy1jYXJ0cmlkZ2UvbWFzdGVyL21ldGFkYXRhL21hbmlmZXN0LnltbCIsImV4cGlyZXMiOjEzOTYwMTg1MTh9--7853bf8d123b4f54346faeb18568f0d7ea026138 -a pgstandby --env JEFF_NODE_TYPE=standby
 echo "added Crunchy postgres cartridge to pgstandby..."
 
 echo "stopping postgres on both servers..."

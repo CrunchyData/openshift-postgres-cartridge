@@ -13,4 +13,7 @@ pg_basebackup -R  \
 --host=$OPENSHIFT_PG_HOST --port=15000 -U $JEFF_MASTER_USER
 
 echo "reconfiguring postgres conf files...."
+
+sleep 4
+
 ~/$version/bin/configure.sh
