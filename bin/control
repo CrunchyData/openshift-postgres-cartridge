@@ -1,6 +1,6 @@
 #!/bin/bash
 
-version=pg932
+version=pg
 
 function status() {
     client_result $pwd

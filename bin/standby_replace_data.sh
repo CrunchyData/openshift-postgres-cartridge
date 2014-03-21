@@ -1,6 +1,6 @@
 #!/bin/bash 
 
-version=pg932
+version=pg
 
 echo "replacing standby data with the master backup...."
 mv $OPENSHIFT_DATA_DIR/.$version/data  $OPENSHIFT_DATA_DIR/.$version/data.orig

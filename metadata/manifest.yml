@@ -1,7 +1,7 @@
-Name: pg932
+Name: pg
 Cartridge-Short-Name: PG
-Display-Name: postgresql-9.3.2-crunchy
-Description: postgresql-9.3.2-crunchy is provided by Crunchy Data Solutions (www.crunchydatasolutions.com) and includes the postgreSQL 9.3.2 release.  This release has been patched to allow the statistics collector and autovacuum processes to work in the OpenShift security model.  Other features include the ability to create a master-standby replication postgreSQL deployment within the OpenShift network.
+Display-Name: postgresql-crunchy
+Description: postgresql-crunchy is provided by Crunchy Data Solutions (www.crunchydatasolutions.com) and includes the postgreSQL 9.3.2 release.  This release has been patched to allow the statistics collector and autovacuum processes to work in the OpenShift security model.  Other features include the ability to create a master-standby replication postgreSQL deployment within the OpenShift network.
 Version: "0.1"
 Website: http://www.crunchydatasolutions.com
 Cartridge-Version: 0.1.0
@@ -11,8 +11,8 @@ Categories:
   - database
   - embedded
 Provides:
-  - pg932-0.1
-  - pg932
+  - pg-0.1
+  - pg
 Scaling:
   Min: 1
   Max: -1
@@ -22,4 +22,4 @@ Endpoints:
     Private-Port:      5432
     Public-Port-Name:  PORT
 
-Source-Url: ssh://github.com/crunchyds/openshift-postgres-932-rh65-cart.git
+Source-Url: ssh://github.com/crunchyds/openshift-postgres-cartridge.git
