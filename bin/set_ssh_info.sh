@@ -22,8 +22,8 @@ fi
 #
 # get the remote internal IP address and make it available for tunnels
 #
-ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=~/pg932/known_hosts \
- -i ~/pg932/pg932_rsa_key \
+ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=~/app-root/data/known_hosts \
+ -i ~/app-root/data/pg932_rsa_key \
 $PG_REMOTE_USER@$PG_REMOTE_HOST \
  'echo $OPENSHIFT_PG_HOST' > ~/pg932/env/PG_REMOTE_INTERNAL_IP
 

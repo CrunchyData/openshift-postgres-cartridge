@@ -15,12 +15,28 @@ rhc app-delete -a pgstandby --confirm
 /bin/rm -rf pgstandby
 
 rhc create-app -a pgmaster -t php-5.3
+rhc create-app -a pgstandby -t php-5.3 
+
+echo "generating key...."
+/bin/rm pg932_rsa_key*
+
+ssh-keygen -f pg932_rsa_key -N ''
+
+echo "copying key to servers...."
+scp -o StrictHostKeyChecking=no pg932_rsa_key $MASTER:~/app-root/data
+scp -o StrictHostKeyChecking=no pg932_rsa_key $STANDBY:~/app-root/data
+
+echo "removing openshift domain key..."
+rhc sshkey remove -i pg932_key
+
+echo "adding key to openshift domain...."
+rhc sshkey add -i pg932_key -k ./pg932_rsa_key.pub
+
 echo "pgmaster created..."
 rhc add-cartridge https://raw.githubusercontent.com/crunchyds/openshift-postgres-932-rh65-cart/master/metadata/manifest.yml?token=863211__eyJzY29wZSI6IlJhd0Jsb2I6Y3J1bmNoeWRzL29wZW5zaGlmdC1wb3N0Z3Jlcy05MzItcmg2NS1jYXJ0L21hc3Rlci9tZXRhZGF0YS9tYW5pZmVzdC55bWwiLCJleHBpcmVzIjoxMzk1OTQ0Mjc4fQ%3D%3D--3bda6243649c055f749c5b52ac3be231ae858d65 -a pgmaster --env JEFF_NODE_TYPE=master
 echo "added pg932 to pgmaster...."
 
 #rhc create-app -a pgstandby -t php-5.3 -g node2profile
-rhc create-app -a pgstandby -t php-5.3 
 echo "pgstandby created..."
 
 rhc add-cartridge https://raw.githubusercontent.com/crunchyds/openshift-postgres-932-rh65-cart/master/metadata/manifest.yml?token=863211__eyJzY29wZSI6IlJhd0Jsb2I6Y3J1bmNoeWRzL29wZW5zaGlmdC1wb3N0Z3Jlcy05MzItcmg2NS1jYXJ0L21hc3Rlci9tZXRhZGF0YS9tYW5pZmVzdC55bWwiLCJleHBpcmVzIjoxMzk1OTQ0Mjc4fQ%3D%3D--3bda6243649c055f749c5b52ac3be231ae858d65 -a pgstandby --env JEFF_NODE_TYPE=standby
@@ -29,24 +45,10 @@ echo "added pg932 to pgstandby..."
 export MASTER=`rhc domain show | grep SSH | grep master | cut -d ':' -f 2 | tr -s " "`
 export STANDBY=`rhc domain show | grep SSH | grep standby | cut -d ':' -f 2 | tr -s " "`
 
-echo "MASTER=" $MASTER
-echo "STANDBY=" $STANDBY
+#echo "MASTER=" $MASTER
+#echo "STANDBY=" $STANDBY
 
 
-echo "generating key...."
-/bin/rm pg932_rsa_key*
-
-ssh-keygen -f pg932_rsa_key -N ''
-
-echo "copying key to servers...."
-scp -o StrictHostKeyChecking=no pg932_rsa_key $MASTER:~/pg932
-scp -o StrictHostKeyChecking=no pg932_rsa_key $STANDBY:~/pg932
-
-echo "removing openshift domain key..."
-rhc sshkey remove -i pg932_key
-
-echo "adding key to openshift domain...."
-rhc sshkey add -i pg932_key -k ./pg932_rsa_key.pub
 
 #ssh -o StrictHostKeyChecking=no $STANDBY '~/pg932/bin/set_ssh_info.sh master ' $MASTER
 #echo "configured port forwarding on standby..."
