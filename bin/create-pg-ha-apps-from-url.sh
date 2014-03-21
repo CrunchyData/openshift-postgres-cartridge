@@ -72,8 +72,9 @@ sleep 7
 #ssh -o StrictHostKeyChecking=no $MASTER '~/pg/bin/configure.sh'
 rhc ssh -a pgmaster --command '~/pg/bin/configure.sh'
 echo "configured master for replication.."
-rhc ssh -a pgstandby --command '~/pg/bin/configure.sh'
-echo "configured standby for replication.."
+
+#rhc ssh -a pgstandby --command '~/pg/bin/configure.sh'
+#echo "configured standby for replication.."
 
 rhc ssh -a pgmaster --command '~/pg/bin/control start'
 echo "started master..."
