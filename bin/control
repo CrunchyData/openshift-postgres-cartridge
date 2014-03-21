@@ -44,7 +44,7 @@ function update() {
 
 function start() {
 # start the tunnels if this is a master or standby configuration of postgres
-	if [ -n "$JEFF_NODE_TYPE" ]; then
+	if [ -n "$PG_NODE_TYPE" ]; then
 		$OPENSHIFT_PG_DIR/bin/create-tunnel.sh	
 	fi
 
@@ -56,7 +56,7 @@ function start() {
 		nohup pg_ctl -D $OPENSHIFT_DATA_DIR/.$version/data start &> /tmp/pg-startup.out;	
     fi
 
-	if [ "$JEFF_NODE_TYPE" == "master" ]; then
+	if [ "$PG_NODE_TYPE" == "master" ]; then
 		client_result "this is a master...we are granting replication to user";
 		sleep 10
 		$OPENSHIFT_PG_DIR/bin/grant.sh;

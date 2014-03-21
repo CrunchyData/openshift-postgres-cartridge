@@ -4,12 +4,12 @@ version=pg
 
 source $OPENSHIFT_CARTRIDGE_SDK_BASH
 
-if [ "$JEFF_NODE_TYPE" == "master" ]; then
+if [ "$PG_NODE_TYPE" == "master" ]; then
         client_result "configuring master postgres server "
         erb  ~/$version/conf/master/pg_hba.conf.erb > $OPENSHIFT_DATA_DIR/.$version/data/pg_hba.conf
         erb  ~/$version/conf/master/postgresql.conf.erb > $OPENSHIFT_DATA_DIR/.$version/data/postgresql.conf
 else
-if [ "$JEFF_NODE_TYPE" == "standby" ]; then
+if [ "$PG_NODE_TYPE" == "standby" ]; then
         client_result "configuring standby postgres server this time"
         erb  ~/$version/conf/standby/pg_hba.conf.erb > $OPENSHIFT_DATA_DIR/.$version/data/pg_hba.conf
         erb  ~/$version/conf/standby/postgresql.conf.erb > $OPENSHIFT_DATA_DIR/.$version/data/postgresql.conf

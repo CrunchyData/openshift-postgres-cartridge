@@ -14,17 +14,17 @@ echo $(pwd)/versions/$version/bin > env/OPENSHIFT_PG_PATH_ELEMENT
 echo $(pwd)/versions/$version/lib > env/LD_LIBRARY_PATH
 echo $OPENSHIFT_PG_HOST > env/STATHOST
 
-if [ -n "$JEFF_NODE_TYPE" ]; then
-		client_result "$JEFF_NODE_TYPE is being setup"
+if [ -n "$PG_NODE_TYPE" ]; then
+		client_result "$PG_NODE_TYPE is being setup"
 
-		if [ "$JEFF_NODE_TYPE" == "master" ]; then
-			add_domain_env_var "JEFF_MASTER_USER=${USER}"
-			add_domain_env_var "JEFF_MASTER_DNS=${OPENSHIFT_APP_DNS}"
-			add_domain_env_var "JEFF_MASTER_IP=${OPENSHIFT_PG_HOST}"
-		elif  [ "$JEFF_NODE_TYPE" == "standby" ]; then
-			add_domain_env_var "JEFF_STANDBY_USER=${USER}"
-			add_domain_env_var "JEFF_STANDBY_DNS=${OPENSHIFT_APP_DNS}"
-			add_domain_env_var "JEFF_STANDBY_IP=${OPENSHIFT_PG_HOST}"
+		if [ "$PG_NODE_TYPE" == "master" ]; then
+			add_domain_env_var "PG_MASTER_USER=${USER}"
+			add_domain_env_var "PG_MASTER_DNS=${OPENSHIFT_APP_DNS}"
+			add_domain_env_var "PG_MASTER_IP=${OPENSHIFT_PG_HOST}"
+		elif  [ "$PG_NODE_TYPE" == "standby" ]; then
+			add_domain_env_var "PG_STANDBY_USER=${USER}"
+			add_domain_env_var "PG_STANDBY_DNS=${OPENSHIFT_APP_DNS}"
+			add_domain_env_var "PG_STANDBY_IP=${OPENSHIFT_PG_HOST}"
 		fi
 fi
 

@@ -14,6 +14,6 @@ local   all         all                                 trust
 
 # Allow all users to connect over the network with valid credentials
 host    all         all           <%= ENV['OPENSHIFT_PG_HOST'] %>/32             trust
-host    all      <%= ENV['JEFF_MASTER_USER'] %> <%= ENV['JEFF_MASTER_IP'] %>/32 trust
+host    all      <%= ENV['PG_MASTER_USER'] %> <%= ENV['PG_MASTER_IP'] %>/32 trust
 host    all         all           ::1/128               md5
-host    replication      <%= ENV['JEFF_MASTER_USER'] %> <%= ENV['JEFF_MASTER_IP'] %>/32 trust
+host    replication      <%= ENV['PG_MASTER_USER'] %> <%= ENV['PG_MASTER_IP'] %>/32 trust
