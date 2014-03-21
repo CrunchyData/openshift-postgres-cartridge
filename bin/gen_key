@@ -1,3 +1,0 @@
-ssh-keygen -f pg932_rsa_key -N ''
-scp -o StrictHostKeyChecking=no pg932_rsa_key $MASTER:~/app-root/data
-scp -o StrictHostKeyChecking=no pg932_rsa_key $STANDBY:~/app-root/data
