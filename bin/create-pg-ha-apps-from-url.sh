@@ -16,6 +16,23 @@ rhc app-delete -a pgstandby --confirm
 
 rhc create-app -a pgmaster -t php-5.3
 rhc create-app -a pgstandby -t php-5.3 
+
+#force a key to be added to your local known_hosts file
+rhc ssh -a pgmaster --command 'date'
+rhc ssh -a pgstandby --command 'date'
+
+#now, get the keys for the pg servers from the local_hosts file
+#and build a custom known_hosts file
+rm /tmp/pg_known_hosts
+touch /tmp/pg_known_hosts
+chmod 600 /tmp/pg_known_hosts
+ssh-keygen -F pgmaster-otest.example.com >> /tmp/pg_known_hosts
+ssh-keygen -F pgstandby-otest.example.com >> /tmp/pg_known_hosts
+
+#now, copy the pg known_hosts to the targets
+rhc scp pgmaster upload /tmp/pg_known_hosts .openshift_ssh/known_hosts
+rhc scp pgstandby upload /tmp/pg_known_hosts .openshift_ssh/known_hosts
+
 #rhc create-app -a pgstandby -t php-5.3 -g node2profile
 
 echo "generating pg apps key...."
