@@ -1,6 +1,4 @@
-#!/bin/bash -e
-
-set -u
+#!/bin/bash 
 
 version=pg
 
