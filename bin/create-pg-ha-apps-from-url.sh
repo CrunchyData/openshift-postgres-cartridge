@@ -7,8 +7,8 @@
 
 echo "cleaning up previous installs...."
 
-ssh-keygen -R pgmaster-otest.example.com
-ssh-keygen -R pgstandby-otest.example.com
+ssh-keygen -R pgmaster-jeffmc.example.com
+ssh-keygen -R pgstandby-jeffmc.example.com
 rhc app-delete -a pgmaster --confirm
 rhc app-delete -a pgstandby --confirm
 /bin/rm -rf pgmaster
@@ -26,8 +26,8 @@ rhc ssh -a pgstandby --command 'date'
 rm /tmp/pg_known_hosts
 touch /tmp/pg_known_hosts
 chmod 600 /tmp/pg_known_hosts
-ssh-keygen -F pgmaster-otest.example.com >> /tmp/pg_known_hosts
-ssh-keygen -F pgstandby-otest.example.com >> /tmp/pg_known_hosts
+ssh-keygen -F pgmaster-jeffmc.example.com >> /tmp/pg_known_hosts
+ssh-keygen -F pgstandby-jeffmc.example.com >> /tmp/pg_known_hosts
 
 #now, copy the pg known_hosts to the targets
 rhc scp pgmaster upload /tmp/pg_known_hosts .openshift_ssh/known_hosts
