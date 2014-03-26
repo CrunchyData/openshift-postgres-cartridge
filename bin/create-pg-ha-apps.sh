@@ -47,12 +47,12 @@ echo "adding key to openshift domain...."
 rhc sshkey add -i pg_key -k ./pg_rsa_key.pub
 
 echo "copying key to servers...."
-rhc scp pgmaster upload pg_rsa_key app-root/data
-rhc scp pgstandby upload pg_rsa_key app-root/data
+rhc scp pgmaster upload pg_rsa_key .openshift_ssh/pg_rsa_key
+rhc scp pgstandby upload pg_rsa_key .openshift_ssh/pg_rsa_key
 #export MASTER=`rhc domain show | grep SSH | grep master | cut -d ':' -f 2 | tr -s " "`
 #export STANDBY=`rhc domain show | grep SSH | grep standby | cut -d ':' -f 2 | tr -s " "`
-#scp -o StrictHostKeyChecking=no pg_rsa_key $MASTER:~/app-root/data
-#scp -o StrictHostKeyChecking=no pg_rsa_key $STANDBY:~/app-root/data
+#scp -o StrictHostKeyChecking=no pg_rsa_key $MASTER:~/.openshift_ssh
+#scp -o StrictHostKeyChecking=no pg_rsa_key $STANDBY:~/.openshift_ssh
 
 
 echo "pgmaster created..."
