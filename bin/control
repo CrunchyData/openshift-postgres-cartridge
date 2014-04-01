@@ -7,7 +7,7 @@ function status() {
 	ps -C postgres > /dev/null
     if [ "$?" -eq "0" ];
 	then client_result "$version is running"; 
-		client_result "  Connect to $version using:  psql -U $OPENSHIFT_GEAR_UUID -h 127.0.0.1 -p 5432 template1";
+		client_result "  Connect to $version using:  psql -U $OPENSHIFT_GEAR_UUID -h 127.0.0.1 -p $PG_PORT template1";
 	else client_result "$version is not running"; 
     fi
 

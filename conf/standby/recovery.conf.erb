@@ -112,7 +112,8 @@ standby_mode = on
 # If set, the PostgreSQL server will try to connect to the primary using this
 # connection string and receive XLOG records continuously.
 #
-primary_conninfo = 'host=<%= ENV['OPENSHIFT_PG_HOST'] %> port=15000 user=<%= ENV['PG_MASTER_USER'] %>'		# e.g. 'host=localhost port=5432'
+primary_conninfo = 'host=<%= ENV['OPENSHIFT_PG_HOST'] %> port=<%= ENV['PG_TUNNEL_PORT'] %> user=<%= ENV['PG_MASTER_USER'] %>'		
+# e.g. 'host=localhost port=5432'
 #
 #
 # By default, a standby server keeps restoring XLOG records from the

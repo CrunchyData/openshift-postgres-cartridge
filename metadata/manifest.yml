@@ -1,17 +1,17 @@
 Name: pg
 Cartridge-Short-Name: PG
 Display-Name: postgresql-crunchy
-Description: postgresql-crunchy is provided by Crunchy Data Solutions (www.crunchydatasolutions.com) and includes the postgreSQL 9.3.2 release.  This release has been patched to allow the statistics collector and autovacuum processes to work in the OpenShift security model.  Other features include the ability to create a master-standby replication postgreSQL deployment within the OpenShift network.
-Version: "0.1"
+Description: base postgres cartridge provided currently based on postgresql release 9.3.4
+Version: "1.0"
 Website: http://www.crunchydatasolutions.com
-Cartridge-Version: 0.1.0
+Cartridge-Version: 1.0.0
 Cartridge-Vendor: crunchydatasolutions
 Categories:
   - service
   - database
   - embedded
 Provides:
-  - pg-0.1
+  - pg-1.0
   - pg
 Scaling:
   Min: 1

@@ -10,6 +10,8 @@ done
 
 mkdir -p $OPENSHIFT_DATA_DIR/.$version/data
 
+echo "5432" > env/PG_PORT
+echo "15000" > env/PG_TUNNEL_PORT
 echo $(pwd)/versions/$version/bin > env/OPENSHIFT_PG_PATH_ELEMENT
 echo $(pwd)/versions/$version/lib > env/LD_LIBRARY_PATH
 echo $OPENSHIFT_PG_HOST > env/STATHOST
