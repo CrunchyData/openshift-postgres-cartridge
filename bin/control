@@ -73,7 +73,7 @@ function stop() {
 	ps -C postgres > /dev/null
     if [ "$?" -eq "0" ];
 	then client_result "$version is running ...issuing stop "; 
-		pg_ctl -D $OPENSHIFT_DATA_DIR/.$version/data stop;	
+		pg_ctl -m fast -D $OPENSHIFT_DATA_DIR/.$version/data stop;	
 	else client_result "$version is not running..."; 
     fi
 
