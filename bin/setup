@@ -1,6 +1,6 @@
 #!/bin/bash 
 
-version=pg
+version=pg-9.3.4
 
 source $OPENSHIFT_CARTRIDGE_SDK_BASH
 
@@ -8,12 +8,22 @@ for dir in logs pid tmp env; do
 	mkdir -p $dir
 done
 
-mkdir -p $OPENSHIFT_DATA_DIR/.$version/data
+rm -rf $OPENSHIFT_PG_DIR/versions/$version/
+
+mkdir $OPENSHIFT_PG_DIR/versions/$version
+
+mkdir -p $OPENSHIFT_DATA_DIR/.pg/data
+
+tar xzf $OPENSHIFT_PG_DIR/versions/$version-crunchy.tar.gz --directory=$OPENSHIFT_PG_DIR/versions/$version
+
+rm  $OPENSHIFT_PG_DIR/versions/pg
+
+ln -s $OPENSHIFT_PG_DIR/versions/$version $OPENSHIFT_PG_DIR/versions/pg 
 
 echo "5432" > env/PG_PORT
 echo "15000" > env/PG_TUNNEL_PORT
-echo $(pwd)/versions/$version/bin > env/OPENSHIFT_PG_PATH_ELEMENT
-echo $(pwd)/versions/$version/lib > env/LD_LIBRARY_PATH
+echo $OPENSHIFT_PG_DIR/versions/pg/bin > env/OPENSHIFT_PG_PATH_ELEMENT
+echo $OPENSHIFT_PG_DIR/versions/pg/lib > env/LD_LIBRARY_PATH
 echo $OPENSHIFT_PG_HOST > env/STATHOST
 
 if [ -n "$PG_NODE_TYPE" ]; then
