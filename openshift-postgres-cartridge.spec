@@ -1,8 +1,8 @@
 %global cartridgedir %{_libexecdir}/openshift/cartridges/crunchypg-cart
 
 Summary:       Provides Crunchy Postgres 932 support
-Name:          openshift-postgres-932-rh65-cart
-Version:       0.0.6
+Name:          openshift-postgres-cartridge
+Version:       1.0.1
 Release:       1%{?dist}
 Group:         Development/Languages
 License:       ASL 2.0
@@ -41,6 +41,9 @@ Provides postgres 932 support to OpenShift. (Cartridge Format V2)
 %doc %{cartridgedir}/LICENSE
 
 %changelog
+* Tue May 13 2014 Unknown name 1.0.1-1
+- new package built with tito
+
 * Tue Mar 18 2014 Unknown name 0.0.6-1
 - fix (jeffmc@localhost.localdomain)
 
