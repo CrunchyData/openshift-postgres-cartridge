@@ -22,7 +22,12 @@ ln -s $OPENSHIFT_PG_DIR/versions/$version $OPENSHIFT_PG_DIR/versions/pg
 
 echo "5432" > env/PG_PORT
 echo $OPENSHIFT_PG_DIR/versions/pg/bin > env/OPENSHIFT_PG_PATH_ELEMENT
+
+# this works in ose 2.0 and NOT iin ose 2.1
 echo $OPENSHIFT_PG_DIR/versions/pg/lib > env/LD_LIBRARY_PATH
+
+# this next env var is available in ose 2.1 and is recommended 
+echo $OPENSHIFT_PG_DIR/versions/pg/lib > env/OPENSHIFT_PG_LD_LIBRARY_PATH_ELEMENT
 echo $OPENSHIFT_PG_HOST > env/STATHOST
 
 client_result "$version setup completed"
