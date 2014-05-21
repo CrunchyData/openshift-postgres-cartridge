@@ -1,6 +1,6 @@
 %global cartridgedir %{_libexecdir}/openshift/cartridges/crunchypg-cart
 
-Summary:       Provides Crunchy Postgres 932 support
+Summary:       Provides Crunchy Postgres support
 Name:          openshift-postgres-cartridge
 Version:       1.0.2
 Release:       1%{?dist}
@@ -15,7 +15,7 @@ Requires:      bc
 Requires:      /bin/sh
 
 %description
-Provides postgres 932 support to OpenShift. (Cartridge Format V2)
+Provides postgres support to OpenShift. (Cartridge Format V2)
 
 %prep
 %setup -q
