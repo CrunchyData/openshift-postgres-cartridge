@@ -1,4 +1,4 @@
-openshift-postgres-932-cart-rh65 
+openshift-postgres-934-cart-rh65 
 =============================
 
 The Crunchy PG Cartridge is named crunchydatasolutions-pg-1.0. The Crunchy PG Cartridge will allow you to install a single standalone PostgreSQL server or a more complex configuration of a “master” and “standby” replication configuration. The Crunchy PG Cartridge includes a version of PostgreSQL 9.3.4. 
