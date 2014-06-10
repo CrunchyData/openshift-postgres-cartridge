@@ -2,7 +2,7 @@
 
 Summary:       Provides Crunchy Postgres support
 Name:          openshift-postgres-cartridge
-Version:       1.0.2
+Version:       1.0.3
 Release:       1%{?dist}
 Group:         Development/Languages
 License:       ASL 2.0
@@ -41,6 +41,15 @@ Provides postgres support to OpenShift. (Cartridge Format V2)
 %doc %{cartridgedir}/LICENSE
 
 %changelog
+* Tue Jun 10 2014 jeff mccormick <jeffmc04@gmail.com> 1.0.3-1
+- fixed stop() function to report correct exit code
+  (jeffmc@localhost.localdomain)
+- update README (jeffmc@localhost.localdomain)
+- fix (jeffmc@localhost.localdomain)
+- Merge branch 'master' of github.com:crunchyds/openshift-postgres-cartridge
+  (jeffmc@localhost.localdomain)
+- fix setting of LD_LIBRARY_PATH for ose2.1 (jeffmc@localhost.localdomain)
+
 * Tue May 13 2014 jeff mccormick <jeffmc04@gmail.com> 1.0.2-1
 - 
 
