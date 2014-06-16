@@ -6,6 +6,8 @@ The Crunchy PG Cartridge is named crunchydatasolutions-pg-1.0. The Crunchy PG Ca
 
 This version of PostgreSQL includes a fix applied to the pgstat.c source file that allows PostgreSQL to bind to an alternative host address rather than the default of localhost. This fix is required for running PostgreSQL on the current OpenShift platform due to the localhost (127.0.0.1) not being available for application use. The STATHOST environment variable is defined by this version of PostgreSQL for this purpose. 
 
+This version also now includes the postgis extensions as well as
+all the contrib extensions.
 
 The PostgreSQL port is 5432.  The database user is $USER, and the database
 name is template1, all are default values.
