@@ -22,4 +22,4 @@ Endpoints:
     Private-Port:      5432
     Public-Port-Name:  PORT
 
-Source-Url: ssh://github.com/crunchyds/openshift-postgres-cartridge.git
+Source-Url: https://github.com/crunchyds/openshift-postgres-cartridge.git
