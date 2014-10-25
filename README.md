@@ -1,8 +1,9 @@
-openshift-postgres-934-cart-rh65 
+Openshift Postgres 9.3.4 Cartridge for OpenShift V2
 =============================
 
 The Crunchy PG Cartridge is named crunchydatasolutions-pg-1.0. The Crunchy PG Cartridge will allow you to install a single standalone PostgreSQL server or a more complex configuration of a “master” and “standby” replication configuration. The Crunchy PG Cartridge includes a version of PostgreSQL 9.3.4. 
 
+This cartridge runs on Openshift v2, both Origin and Enterprise.
 
 This version of PostgreSQL includes a fix applied to the pgstat.c source file that allows PostgreSQL to bind to an alternative host address rather than the default of localhost. This fix is required for running PostgreSQL on the current OpenShift platform due to the localhost (127.0.0.1) not being available for application use. The STATHOST environment variable is defined by this version of PostgreSQL for this purpose. 
 
