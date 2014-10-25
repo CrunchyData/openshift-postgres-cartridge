@@ -5,6 +5,15 @@ The Crunchy PG Cartridge is named crunchydatasolutions-pg-1.0. The Crunchy PG Ca
 
 This cartridge runs on Openshift v2, both Origin and Enterprise.
 
+To install this in Origin V2, enter the following into the downloadable
+cartridge "install your own cartridge" field:
+
+http://cartreflect-claytondev.rhcloud.com/github/crunchyds/openshift-postgres-cartridge
+
+This will use the reflector to add the Crunchy postgres cartridge to your
+web application.
+
+
 This version of PostgreSQL includes a fix applied to the pgstat.c source file that allows PostgreSQL to bind to an alternative host address rather than the default of localhost. This fix is required for running PostgreSQL on the current OpenShift platform due to the localhost (127.0.0.1) not being available for application use. The STATHOST environment variable is defined by this version of PostgreSQL for this purpose. 
 
 This version also now includes the postgis extensions as well as
