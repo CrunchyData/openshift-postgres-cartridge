@@ -8,7 +8,7 @@ This cartridge runs on Openshift v2, both Origin and Enterprise.
 To install this in Origin V2, enter the following into the downloadable
 cartridge "install your own cartridge" field:
 
-http://cartreflect-claytondev.rhcloud.com/github/crunchyds/openshift-postgres-cartridge
+http://cartreflect-claytondev.rhcloud.com/github/crunchydata/openshift-postgres-cartridge
 
 This will use the reflector to add the Crunchy postgres cartridge to your
 web application.
