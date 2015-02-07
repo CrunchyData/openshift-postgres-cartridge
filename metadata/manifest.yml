@@ -13,13 +13,20 @@ Categories:
 Provides:
   - pg-1.0
   - pg
+Publishes:
+  publish-db-connection-info:
+    Type: ENV:NET_TCP:db:connection-info
+  publish-ld-library-path-info:
+    Type: ENV:NET_TCP:db:ld-library-path-info
 Scaling:
   Min: 1
-  Max: -1
+  Max: 1
 Endpoints:
   - Private-IP-Name:   HOST
     Private-Port-Name: PORT
     Private-Port:      5432
     Public-Port-Name:  PORT
-
+    Protocols:
+     -postgresql
+    
 Source-Url: https://github.com/crunchyds/openshift-postgres-cartridge.git
