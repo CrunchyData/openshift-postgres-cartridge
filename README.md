@@ -1,7 +1,7 @@
-Openshift Postgres 9.3.4 Cartridge for OpenShift V2
+Openshift Postgres 9.3.6 Cartridge for OpenShift V2
 =============================
 
-The Crunchy PG Cartridge is named crunchydatasolutions-pg-1.0. The Crunchy PG Cartridge will allow you to install a single standalone PostgreSQL server or a more complex configuration of a “master” and “standby” replication configuration. The Crunchy PG Cartridge includes a version of PostgreSQL 9.3.4. 
+The Crunchy PG Cartridge is named crunchydatasolutions-pg-1.0. The Crunchy PG Cartridge will allow you to install a single standalone PostgreSQL server or a more complex configuration of a “master” and “standby” replication configuration. The Crunchy PG Cartridge includes a version of PostgreSQL 9.3.6. 
 
 This cartridge runs on Openshift v2, both Origin and Enterprise.
 
@@ -19,12 +19,11 @@ This version of PostgreSQL includes a fix applied to the pgstat.c source file th
 This version also now includes the postgis extensions as well as
 all the contrib extensions.
 
-The PostgreSQL port is 5432.  The database user is $USER, and the database
-name is template1, all are default values.
+The PostgreSQL port is 5432.  The database user is $USER which has superuser privs.
 
 The PostgreSQL data directory is found at ~/app-root/data/.pg
 
 Test the installation with this command:
 
-psql -U $USER -h $OPENSHIFT_PG_HOST template1
+psql -U $USER -h $OPENSHIFT_PG_HOST postgres
 
