@@ -1,6 +1,6 @@
 #!/bin/bash 
 
-version=pg-9.3.4
+version=pg-9.3.6
 
 source $OPENSHIFT_CARTRIDGE_SDK_BASH
 
