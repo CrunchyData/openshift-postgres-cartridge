@@ -30,4 +30,9 @@ echo $OPENSHIFT_PG_DIR/versions/pg/lib > env/LD_LIBRARY_PATH
 echo $OPENSHIFT_PG_DIR/versions/pg/lib > env/OPENSHIFT_PG_LD_LIBRARY_PATH_ELEMENT
 echo $OPENSHIFT_PG_HOST > env/STATHOST
 
+echo $OPENSHIFT_PG_HOST > env/OPENSHIFT_CRUNCHY_HOST
+echo $USER > env/OPENSHIFT_CRUNCHY_USER
+echo "5432" > env/OPENSHIFT_CRUNCHY_PORT
+echo "postgres" > env/OPENSHIFT_CRUNCHY_DATABASE
+
 client_result "$version setup completed"

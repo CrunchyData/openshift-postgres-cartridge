@@ -45,6 +45,12 @@ function update() {
 function start() {
 
 	client_result "starting postgres...."	
+	client_result "OPENSHIFT_CRUNCHY_HOST is $OPENSHIFT_CRUNCHY_HOST"
+	client_result "OPENSHIFT_CRUNCHY_PORT is $OPENSHIFT_CRUNCHY_PORT"
+	client_result "OPENSHIFT_CRUNCHY_USER is $OPENSHIFT_CRUNCHY_USER"
+	client_result "OPENSHIFT_CRUNCHY_DATABASE is $OPENSHIFT_CRUNCHY_DATABASE"
+	client_result "psql -U $OPENSHIFT_CRUNCHY_USER -h $OPENSHIFT_CRUNCHY_HOST $OPENSHIFT_CRUNCHY_DATABASE"
+
 	ps -C postgres > /dev/null
     if [ "$?" -eq "0" ];
 	then client_result "$version is running already...run stop first"; 

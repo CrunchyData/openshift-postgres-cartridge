@@ -31,11 +31,12 @@ This version of PostgreSQL includes a fix applied to the pgstat.c source file th
 
 Testing
 -------------
+Various environment variables are set that allow you to connect
+to the database as follows:
+
+psql -U $OPENSHIFT_CRUNCHY_USER -h $OPENSHIFT_CRUNCHY_HOST $OPENSHIFT_CRUNCHY_DATABASE
+
 The PostgreSQL port is 5432.  The database user is $USER which has superuser privs.
 
 The PostgreSQL data directory is found at ~/app-root/data/.pg
-
-Test the installation with this command:
-
-psql -U $USER -h $OPENSHIFT_PG_HOST postgres
 
